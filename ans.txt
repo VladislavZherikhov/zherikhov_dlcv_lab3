@@ -1,0 +1,11 @@
+1. How did the decision boundary change as k increased from 1 to 5? 
+As k increased, the decision boundary became smoother, less jagged, and less sensitive to individual noise points or outliers in the training data. 
+A smaller \[k\] (\(k=1\)) creates highly complex, tightly-fit boundaries, while a larger \[k\] (\(k=5\)) averages out local fluctuations. 
+
+2. Which value performed better on the CIFAR-10 subset? 
+Usually, k=5 performs a little bit better or similarly to k=1 on this raw pixel CIFAR-10 subset (typically yielding around 27-28% accuracy). 
+
+3. Why is test-set accuracy not the right quantity for choosing k? 
+Using the test set to tune hyperparameters like k leads to "data leakage" and overfitting to the test set. 
+If we pick k based on test performance, the test set is no longer an independent, unseen measure of how well the model generalizes to completely new real-world data. 
+Instead, a separate validation set or cross-validation should be used.
